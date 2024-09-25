@@ -5,16 +5,39 @@ import Home from "./routes/Home";
 import Profile from "./routes/Profile";
 import Login from "./routes/Login";
 import LoadingScreen from "./components/LoadingScreen";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import { auth } from "./firebase";
 import CreateAccount from "./routes/CreateAccount";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { auth } from "./firebase";
 
 const router = createBrowserRouter([
+  // portected하는 방법이 두 개
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
+      // {
+      //   path: "",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <Home />
+      //     </ProtectedRoute>
+      //   ),
+      // },
+      // {
+      //   path: "profile",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <Profile />
+      //     </ProtectedRoute>
+      //   ),
+      // },
       {
         path: "",
         element: <Home />,
@@ -55,7 +78,8 @@ function App() {
   const init = async () => {
     // await firebase Authentication
     // setTimeout(() => setIsLoading(false), 2000);
-    await auth.authStateReady()
+    await auth.authStateReady();
+    // resolve, reject 다시 공부해야겠는데?
     await setIsLoading(false);
   };
 
