@@ -9,12 +9,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBGEx252fdAS7IwavSgy4hB7skJtFmOD2c",
-  authDomain: "sns-flatform-7b2ff.firebaseapp.com",
-  projectId: "sns-flatform-7b2ff",
-  storageBucket: "sns-flatform-7b2ff.appspot.com",
-  messagingSenderId: "476443588574",
-  appId: "1:476443588574:web:7195cd12404c8cc9a30f4f",
+  apiKey: "AIzaSyCu3S22I2xDiJOif6i_nay8ndpJh2YyAK8",
+  authDomain: "sns-flatform-b0963.firebaseapp.com",
+  projectId: "sns-flatform-b0963",
+  storageBucket: "sns-flatform-b0963.appspot.com",
+  messagingSenderId: "781265093290",
+  appId: "1:781265093290:web:d913ed8681008decfc46d3"
 };
 
 // Initialize Firebase
